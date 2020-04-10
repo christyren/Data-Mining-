@@ -71,7 +71,7 @@ def train(epoch):
         model.train()
         optimizer.zero_grad()
         adjust_learning_rate(optimizer, epoch)
-        #data, target = data.cuda(), target.cuda()
+        data, target = data.cuda(), target.cuda()
         output = model(data)
         loss = criterion(output, target)
         loss.backward()
